@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>All Events - Technosphere</title>
+  <link href='https://fonts.googleapis.com/css?family=Jaldi|Roboto+Condensed' rel='stylesheet' type='text/css'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css'>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css" rel="stylesheet">
+
+      <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cards {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  padding: 1.5%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.card {
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  background: #fefff9;
+  color: #363636;
+  text-decoration: none;
+  -moz-box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+@media (max-width: 700px) {
+  .card {
+    width: 100%;
+  }
+  .container {
+      padding-top: 30vh;
+  }
+}
+@media (min-width: 700px) {
+  .container {
+      padding-top: 20vh;
+}
+  .card {
+    max-width: 320px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  .card:nth-child(even) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 980px) {
+  .card:nth-child(even) {
+    margin-right: 20px;
+  }
+  .card:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+.card span {
+  display: block;
+}
+.card .card-summary {
+  padding: 5% 5% 3% 5%;
+}
+.card .card-header {
+  position: relative;
+  height: 175px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  background-blend-mode: overlay;
+  -moz-border-radius: 4px 4px 0 0;
+  -webkit-border-radius: 4px;
+  border-radius: 4px 4px 0 0;
+}
+.card .card-header:hover, .card .card-header:focus {
+  background-color: rgba(255, 255, 255, 0);
+}
+.card .card-title {
+  background: rgba(80, 195, 154, 0.85);;
+  padding: 3.5% 0 2.5% 0;
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.card .card-title h3 {
+  font-size: 1.2em;
+  line-height: 1.2;
+  padding: 0 3.5%;
+  margin: 0;
+}
+.card .card-meta {
+  max-height: 0;
+  overflow: hidden;
+  color: #666;
+  font-size: .78em;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 5%;
+  padding: 0 5%;
+  -moz-transition-property: max-height;
+  -o-transition-property: max-height;
+  -webkit-transition-property: max-height;
+  transition-property: max-height;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+.card:hover, .card:focus {
+  background: white;
+  -moz-box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
+}
+.card:hover .card-title, .card:focus .card-title {
+  background: rgb(19, 169, 202);
+}
+.card:hover .card-meta, .card:focus .card-meta {
+  max-height: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background: #f0f0f0;
+  font-size: 17px;
+  line-height: 1.4;
+  font-family: 'Jaldi', sans-serif;
+}
+
+* {
+  -moz-transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, -moz-transform;
+  -o-transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, -o-transform;
+  -webkit-transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, -webkit-transform;
+  transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, transform;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -moz-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <link rel="stylesheet" href="./css/site.css">
+</head>
+
+<body style="background-image: url('./img/main.jpg');">
+  <!-- Registration open -->
+  <div style="color: black;  z-index: 99999;" class="modal fade top" id="notification" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-frame modal-top" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalPreviewLabel">Registrations are open! Last date of registration extended to 17th March 2019. <a href="https://m.facebook.com/jecroboworld/">Follow us</a> on facebook to stay updated.</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!-- Registration open -->
+
+  <div class="contentFixed">
+      <header class="header">
+          <h1 class="headerTitle"><a href="#!"> <img src="img/Phoenix-19-logo-lg.png" class="logo"></a> </h1>
+      </header>
+      <nav class="menu" id="siteNav">
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="https://www.facebook.com/jecroboworld/">News</a></li>
+              <li><a href="./about_us/about.html">Contact</a></li>
+          </ul>
+      </nav>
+  </div>
+
+  <div class="container">
+
+	<div class="cards">
+		<a class="card" href="#">
+			<span class="card-header" style="background-image: url(./img/robowar.jpg);">
+				<span class="card-title">
+					<h3>RoboWar</h3>
+				</span>
+			</span>
+			<span class="card-summary">
+        Make your bot, compete with others, smash their bots and show the world who the real boss is!
+      </span>
+      <row class="mx-auto">
+        <button class="btn blue-gradient" id="modalActivate" data-toggle="modal" data-target="#modalWar">Register</button>
+        <button class="btn aqua-gradient" onclick="location.href='https://drive.google.com/open?id=113b4MXv8Gw5-QZd0HmepLqpY08eat0HO';">Read Abstract</button> </row>
+			<span class="card-meta">
+
+			</span>
+		</a>
+
+		<a class="card" href="#">
+			<span class="card-header" style="background-image: url(./img/robosoccer.jpg);">
+				<span class="card-title">
+					<h3>RoboSoccer</h3>
+				</span>
+			</span>
+			<span class="card-summary">
+         Are u a big fan of football and robots?  Then it is the right place to show your  talent. So come to the arena and show us what you got.
+      </span>
+      <row class="mx-auto">
+        <button class="btn blue-gradient" id="modalActivate" data-toggle="modal" data-target="#modalSoccer">Register</button>
+        <button class="btn aqua-gradient" onclick="location.href='https://drive.google.com/open?id=1McEpFkCObA9j5WVEdW_mhY0t-RMmZuRJ'">Read Abstract</button> </row>
+
+			<span class="card-meta">
+
+			</span>
+		</a>
+
+		<a class="card" href="#">
+			<span class="card-header" style="background-image: url(./img/roboroyal.jpeg)">
+				<span class="card-title">
+					<h3>RoboRoyal</h3>
+				</span>
+			</span>
+			<span class="card-summary">
+        Save yor lord, attack other's kingdom  and enjoy the victory. If've played clash royal.. you'll love this one!
+      </span>
+      <row class="mx-auto">
+        <button class="btn blue-gradient" id="modalActivate" data-toggle="modal" data-target="#modalRoyal">Register</button>
+        <button class="btn aqua-gradient" onclick="location.href='https://drive.google.com/open?id=1lqhWYs_-hlFrf6k9mIfqPa0iVlWkcRpJ'">Read Abstract</button> </row>
+
+			<span class="card-meta">
+
+			</span>
+		</a>
+
+		<a class="card" href="#">
+			<span class="card-header" style="background-image: url(./img/circuit-o-nix.jpg);">
+				<span class="card-title">
+					<h3>Circuit-o-nix</h3>
+				</span>
+			</span>
+			<span class="card-summary">
+        Do you feel excited by making yourself busy with electronics, then this is the right place for the people like you where you can design a circuit and make your heart fullfilled.
+      </span>
+      <row class="mx-auto">
+        <button class="btn blue-gradient" id="modalActivate" data-toggle="modal" data-target="#modalCircuit">Register</button>
+        <button class="btn aqua-gradient" onclick="location.href='https://gdoc.pub/doc/e/2PACX-1vQFUqMTdxWsqf0B35D2rdQqQqJdco3DhH9FR6qsjxmTc4o-b1w-m0y8A82J8ZPK0Sq5qkD5GbMLhEAi'">Read Abstract</button> </row>
+
+			<span class="card-meta">
+
+			</span>
+		</a>
+
+		<a class="card" href="#">
+			<span class="card-header" style="background-image: url(./img/arduino_hackathon.jpeg);">
+				<span class="card-title">
+					<h3>Arduino Hackathon</h3>
+				</span>
+			</span>
+			<span class="card-summary">
+        As microcontrollers become an essential part in an engineers life, this event brings you a platform where you can show your dexterity in programming Arduino based on real world problems.
+      </span>
+      <row class="mx-auto">
+        <button class="btn blue-gradient" id="modalActivate" data-toggle="modal" data-target="#modalHack">Register</button>
+        <button class="btn aqua-gradient" onclick="location.href='https://drive.google.com/open?id=1MNxHQT1qgHBdWLawNVuxKXRaZu98mjR4'">Read Abstract</button> </row>
+
+			<span class="card-meta">
+
+			</span>
+		</a>
+
+		<a class="card" href="#">
+			<span class="card-header" style="background-image: url(./img/codeference.jpeg);">
+				<span class="card-title">
+					<h3>Codeference Red</h3>
+				</span>
+			</span>
+			<span class="card-summary">
+        If you love coding and think algorithimically, then join this event and solve as many problems as you can to show your coding skills.
+      </span>
+      <row class="mx-auto">
+        <button class="btn blue-gradient" id="modalActivate" data-toggle="modal" data-target="#modalCode">Register</button>
+        <button class="btn aqua-gradient" onclick="location.href='https://gdoc.pub/doc/e/2PACX-1vSi6Rcn8lF9UxovnMIK98u9gA0vYYrh6kt3q6eAIqdpQbe7r3CY-AvQH-FoUmbbajuh28RCyGKO_WdE'">Read Abstract</button> </row>
+
+			<span class="card-meta">
+
+			</span>
+		</a>
+
+		<a class="card" href="#">
+			<span class="card-header" style="background-image: url(./img/techexpo.jpeg);">
+				<span class="card-title">
+					<h3>TechExpo</h3>
+				</span>
+			</span>
+			<span class="card-summary">
+        A platform where you can showcase your innovative ideas in the form of a working model or prototype. <b> For UnderGrad and Graduate people.</b>
+      </span>
+      <row class="mx-auto">
+        <button class="btn blue-gradient" id="modalActivate" data-toggle="modal" data-target="#modalExpo">Register</button>
+      </row>
+
+			<span class="card-meta">
+
+			</span>
+		</a>
+
+		<a class="card" href="#">
+			<span class="card-header" style="background-image: url(./img/roboracing.jpg);">
+				<span class="card-title">
+					<h3>RoboRacing</h3>
+				</span>
+			</span>
+			<span class="card-summary">
+        For the very first time technospehere brings a fun game  for all . So come to the arena with your buddies and enjoy to the fullest.
+			</span>
+      <row class="mx-auto">
+        <!-- <button class="btn blue-gradient">Register</button> -->
+        <button class="btn aqua-gradient" onclick="location.href='https://drive.google.com/open?id=1_NoQ_iZ8TkS1cDgUD1IoxIYvrHNhF4G7'">Read Abstract</button> </row>
+
+			<span class="card-meta">
+
+			</span>
+		</a>
+
+		<a class="card" href="#">
+			<span class="card-header" style="background-image: url(./img/acadexpo.jpeg);">
+				<span class="card-title">
+					<h3>AcadExpo</h3>
+				</span>
+			</span>
+			</span>
+      <span class="card-summary">This year  for the very first time there will be an interschool exhibition and competition  where young minds can showcase their innovative ideas in the form of a working model or prototype.  <b>For School/HS Students only.</b></span>
+      <row class="mx-auto">
+        <button class="btn blue-gradient" id="modalActivate" data-toggle="modal" data-target="#AcadExpoQuickView">Register</button>
+        <button class="btn aqua-gradient" onclick="location.href='https://gdoc.pub/doc/e/2PACX-1vQc9NtmHwN7BVIAs-hwrOMFpWUkvPF9QyHZtHv9rmu_ru2pUD55TF3QwLSKye9xie_pJp-6HJhyyVIY'">Read Abstract</button> </row>
+
+			<span class="card-meta">
+
+			</span>
+		</a>
+	</div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  <footer class="page-footer fixed-bottom font-small blue" style="background-image: linear-gradient(90deg, #285ca5, #18d5ff); font-weight:600;">
+    <div class="footer-copyright text-center py-3">Created by
+      <a href="./about_us/about.html"> Team RoboWorld</a>
+    </div>
+  </footer>
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/js/mdb.min.js"></script>
+
+
+
+  <!-- War Form -->
+  <div class="modal fade" id="modalWar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="z-index:10500;">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-5">
+              <img class="d-block w-100" src="./img/robowar.jpg"
+                alt="First slide">
+            </div>
+
+            <div class="col-lg-5" style="color:black;">
+              <h4> <a href='https://goo.gl/forms/hCCicNN7u1xUe7VA3'>Click here</a> to register..</h4>
+              <!-- <form class="border border-light p-5" id="test-form-war">
+                <p class="h4 mb-4 text-center">Register now</p>
+                <input type="text" id="defaultRegisterFormCollegeName" class="form-control" placeholder="College/ Institution" name="College">
+                <input type="text" id="defaultRegisterFormTeamName" class="form-control" placeholder="Team Name" name="TeamName">
+                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="Email">
+                <input type="text" id="defaultRegisterFormPassword" class="form-control" placeholder="Team Leader" name="TeamLeader" >
+                <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" name="Phone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+               <br>
+              	<label for="textarea">Enter member details (separated by comma)</label>
+                <textarea id="textarea" class="form-control mb-4" placeholder="eg. Arun Dutta (+919876543210), Neha Jain (+998765432109).." name="Members"></textarea>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter" name="Accomodation">
+                    <label class="custom-control-label" for="defaultRegisterFormNewsletter">Need Accommodation ?</label>
+                </div>
+                <button class="btn btn-info my-4 btn-block" id="submit-form-war" onclick="submitted(1)">Submit</button>
+              </form>
+            </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Soccer Form -->
+  <div class="modal fade" id="modalSoccer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="z-index:10500;">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-5">
+
+              <img class="d-block w-100" src="./img/robosoccer.jpg"
+                alt="First slide">
+
+            </div>
+            <div class="col-lg-5" style="color:black;">
+              <h4> <a href='https://goo.gl/forms/60Gk24Nt3xQZxopB3'>Click here</a> to register..</h4>
+              <!-- <form class="border border-light p-5" id="test-form-soccer">
+                <p class="h4 mb-4 text-center">Register now</p>
+                <input type="text" id="defaultRegisterFormCollegeName" class="form-control" placeholder="College/ Institution" name="College">
+                <input type="text" id="defaultRegisterFormTeamName" class="form-control" placeholder="Team Name" name="TeamName">
+                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="Email">
+                <input type="text" id="defaultRegisterFormPassword" class="form-control" placeholder="Team Leader" name="TeamLeader" >
+                <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" name="Phone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+               <br>
+              	<label for="textarea">Enter member details (separated by comma)</label>
+                <textarea id="textarea" class="form-control mb-4" placeholder="eg. Arun Dutta (+919876543210), Neha Jain (+998765432109).." name="Members"></textarea>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter" name="Accomodation">
+                    <label class="custom-control-label" for="defaultRegisterFormNewsletter">Need Accommodation ?</label>
+                </div>
+                <button class="btn btn-info my-4 btn-block" id="submit-form-soccer" onclick="submitted(2)">Submit</button>
+              </form>
+            </div> -->
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Royal Form -->
+  <div class="modal fade" id="modalRoyal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="z-index:10500;">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-5">
+              <img class="d-block w-100" src="./img/roboroyal.jpeg"
+                alt="First slide">
+            </div>
+            <div class="col-lg-5" style="color:black;">
+              <h4> <a href='https://goo.gl/forms/it6fheXJqouvPApQ2'>Click here</a> to register..</h4>
+
+              <!-- <form class="border border-light p-5" id="test-form-royal">
+                <p class="h4 mb-4 text-center">Register now</p>
+                <input type="text" id="defaultRegisterFormCollegeName" class="form-control" placeholder="College/ Institution" name="College">
+                <input type="text" id="defaultRegisterFormTeamName" class="form-control" placeholder="Team Name" name="TeamName">
+                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="Email">
+                <input type="text" id="defaultRegisterFormPassword" class="form-control" placeholder="Team Leader" name="TeamLeader" >
+                <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" name="Phone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+               <br>
+                <label for="textarea">Enter member details (separated by comma)</label>
+                <textarea id="textarea" class="form-control mb-4" placeholder="eg. Arun Dutta (+919876543210), Neha Jain (+998765432109).." name="Members"></textarea>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter" name="Accomodation">
+                    <label class="custom-control-label" for="defaultRegisterFormNewsletter">Need Accommodation ?</label>
+                </div>
+                <button class="btn btn-info my-4 btn-block" id="submit-form-royal" onclick="submitted(3)">Submit</button>
+              </form>
+            </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hack Form -->
+  <div class="modal fade" id="modalHack" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="z-index:10500;">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-5">
+              <img class="d-block w-100" src="./img/arduino_hackathon.jpeg"
+                alt="First slide">
+            </div>
+            <div class="col-lg-5" style="color:black;">
+              <h4> <a href='https://goo.gl/forms/LsZ5gGYI5lAHxRuH3'>Click here</a> to register..</h4>
+              <!-- <form class="border border-light p-5" id="test-form-hack">
+                <p class="h4 mb-4 text-center">Register now</p>
+                <input type="text" id="defaultRegisterFormCollegeName" class="form-control" placeholder="College/ Institution" name="College">
+                <input type="text" id="defaultRegisterFormTeamName" class="form-control" placeholder="Team Name" name="TeamName">
+                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="Email">
+                <input type="text" id="defaultRegisterFormPassword" class="form-control" placeholder="Team Leader" name="TeamLeader" >
+                <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" name="Phone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+               <br>
+              	<label for="textarea">Enter member details (separated by comma)</label>
+                <textarea id="textarea" class="form-control mb-4" placeholder="eg. Arun Dutta (+919876543210), Neha Jain (+998765432109).." name="Members"></textarea>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter" name="Accomodation">
+                    <label class="custom-control-label" for="defaultRegisterFormNewsletter">Need Accommodation ?</label>
+                </div>
+                <button class="btn btn-info my-4 btn-block" id="submit-form-hack" onclick="submitted(4)">Submit</button>
+              </form>
+            </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- circuit Form -->
+  <div class="modal fade" id="modalCircuit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="z-index:10500;">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-5">
+              <img class="d-block w-100" src="./img/circuit-o-nix.jpg"
+                alt="First slide">
+            </div>
+            <div class="col-lg-5" style="color:black;">
+              <h4> <a href='https://goo.gl/forms/WWoCxB4tPKjFEGcJ2'>Click here</a> to register..</h4>
+              <!-- <form class="border border-light p-5" id="test-form-circuit">
+                <p class="h4 mb-4 text-center">Register now</p>
+                <input type="text" id="defaultRegisterFormCollegeName" class="form-control" placeholder="College/ Institution" name="College">
+                <input type="text" id="defaultRegisterFormTeamName" class="form-control" placeholder="Team Name" name="TeamName">
+                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="Email">
+                <input type="text" id="defaultRegisterFormPassword" class="form-control" placeholder="Team Leader" name="TeamLeader" >
+                <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" name="Phone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+               <br>
+              	<label for="textarea">Enter member details (separated by comma)</label>
+                <textarea id="textarea" class="form-control mb-4" placeholder="eg. Arun Dutta (+919876543210), Neha Jain (+998765432109).." name="Members"></textarea>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter" name="Accomodation">
+                    <label class="custom-control-label" for="defaultRegisterFormNewsletter">Need Accommodation ?</label>
+                </div>
+                <button class="btn btn-info my-4 btn-block" id="submit-form-circuit" onclick="submitted(5)">Submit</button>
+              </form>
+            </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- code Form -->
+  <div class="modal fade" id="modalCode" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="z-index:10500;">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-5">
+              <img class="d-block w-100" src="./img/codeference.jpeg"
+                alt="First slide">
+            </div>
+            <div class="col-lg-5" style="color:black;">
+              <h4> <a href='https://goo.gl/forms/KkVA7zysHGFy5vOn1'>Click here</a> to register..</h4>
+              <!-- <form class="border border-light p-5" id="test-form-code">
+                <p class="h4 mb-4 text-center">Register now</p>
+                <input type="text" id="defaultRegisterFormCollegeName" class="form-control" placeholder="College/ Institution" name="College">
+                <input type="text" id="defaultRegisterFormTeamName" class="form-control" placeholder="Team Name" name="TeamName">
+                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="Email">
+                <input type="text" id="defaultRegisterFormPassword" class="form-control" placeholder="Team Leader" name="TeamLeader" >
+                <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" name="Phone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+               <br>
+                <label for="textarea">Enter member details (separated by comma)</label>
+                <textarea id="textarea" class="form-control mb-4" placeholder="eg. Arun Dutta (+919876543210), Neha Jain (+998765432109).." name="Members"></textarea>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter" name="Accomodation">
+                    <label class="custom-control-label" for="defaultRegisterFormNewsletter">Need Accommodation ?</label>
+                </div>
+                <button class="btn btn-info my-4 btn-block" id="submit-form-code" onclick="submitted(6)">Submit</button>
+              </form>
+            </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- expo Form -->
+  <div class="modal fade" id="modalExpo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="z-index:10500;">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-5">
+              <img class="d-block w-100" src="./img/techexpo.jpeg"
+                alt="First slide">
+            </div>
+            <div class="col-lg-5" style="color:black;">
+              <h4> <a href='https://goo.gl/forms/pW4M469vxKfz1jAq2'>Click here</a> to register..</h4>
+              <!-- <form class="border border-light p-5" id="test-form-expo">
+                <p class="h4 mb-4 text-center">Register now</p>
+                <input type="text" id="defaultRegisterFormCollegeName" class="form-control" placeholder="College/ Institution" name="College">
+                <input type="text" id="defaultRegisterFormTeamName" class="form-control" placeholder="Team Name" name="TeamName">
+                <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" name="Email">
+                <input type="text" id="defaultRegisterFormPassword" class="form-control" placeholder="Team Leader" name="TeamLeader" >
+                <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" name="Phone" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+               <br>
+              	<label for="textarea">Enter member details (separated by comma)</label>
+                <textarea id="textarea" class="form-control mb-4" placeholder="eg. Arun Dutta (+919876543210), Neha Jain (+998765432109).." name="Members"></textarea>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter" name="Accomodation" >
+                    <label class="custom-control-label" for="defaultRegisterFormNewsletter">Need Accommodation ?</label>
+                </div>
+                <button class="btn btn-info my-4 btn-block" id="submit-form-expo" onclick="submitted(7)">Submit</button>
+              </form>
+            </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- AcadExpo Form -->
+  <!-- <link rel="stylesheet" href="/css/acadexpoform.css"> -->
+<script type="text/javascript">
+console.log("HERE");
+    $(window).on('load',function(){
+        $('#notification').modal('show');
+    });
+</script>
+
+  <div class="modal fade" id="AcadExpoQuickView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="z-index:10500;">
+    <div class="modal-dialog modal-lg" role="document" >
+      <div class="modal-content"
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-5">
+              <img class="d-block w-100" src="./img/acadexpo.jpeg"
+                alt="First slide">
+            </div>
+            <div class="col-lg-5" style="color:black;">
+              <h4> <a href='https://goo.gl/forms/jM0rDMlaZkHgEJZv2'>Click here</a> to register..</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript" src="./js/form.js">
+
+</script>
+
+<script type="text/javascript">
+// console.log("IN");
+//
+// $(document).ready(function(){
+//   timeout();
+// });
+//
+// function timeout() {
+//   setTimeout(function(){
+//      $('#labnol').contents().find('credits').hide();
+//      console.log("hidden");
+//      timeout();
+//   }, 3000);
+// }
+
+</script>
+
+
+
+</body>
+
+</html>
